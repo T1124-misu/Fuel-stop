@@ -1,0 +1,704 @@
+/* ==========================================================================
+   1. CSS Reset
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ==========================================================================
+   2. Design Tokens (:root custom properties)
+   ========================================================================== */
+
+:root {
+  /* Brand colours */
+  --color-grad-start:  #c1ff72;
+  --color-grad-end:    #00a560;
+  --color-accent:      #F8F6F0;
+  --color-footer-bg:   #00a560;
+
+  /* Gradient utility */
+  --brand-gradient: linear-gradient(90deg, var(--color-grad-start), var(--color-grad-end));
+
+  /* Typography */
+  --font-size-base:    16px;
+  --font-size-min:     14px;
+  --line-height-base:  1.5;
+  --line-height-min:   1.4;
+
+  /* Spacing */
+  --section-padding:   4rem 1rem;
+  --grid-gap:          1.5rem;
+
+  /* Grid columns (overridden at each breakpoint) */
+  --product-cols: 1;
+  --team-cols:    1;
+}
+
+/* ==========================================================================
+   3. Layout Utilities
+   ========================================================================== */
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* ==========================================================================
+   4. Hero Section
+   ========================================================================== */
+
+.hero {
+  padding: var(--section-padding);
+  background: var(--brand-gradient);
+  color: #1a1a1a;
+}
+
+.hero__inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--grid-gap);
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .hero__inner {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.hero__title {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  color: #1a1a1a;
+}
+
+.hero__tagline {
+  font-size: 1.25rem;
+  line-height: var(--line-height-base);
+  margin-bottom: 2rem;
+  color: #1a1a1a;
+}
+
+.hero__img {
+  width: 50%;
+  max-width: 480px;
+  height: auto;
+  border-radius: 1rem;
+  display: block;
+  margin: 0 auto;
+  min-height: 200px;
+}
+
+/* ==========================================================================
+   5. Buttons
+   ========================================================================== */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 2rem;
+  border-radius: 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  min-height: 44px;
+  min-width: 44px;
+  transition: opacity 0.2s ease;
+}
+
+.btn--primary {
+  background: linear-gradient(90deg, var(--color-grad-end), var(--color-grad-start));
+  color: #fff;
+}
+
+.btn--primary:hover,
+.btn--primary:focus {
+  opacity: 0.9;
+  outline: 2px solid #1a1a1a;
+  outline-offset: 2px;
+}
+
+/* ==========================================================================
+   6. Vision & Mission Section
+   ========================================================================== */
+
+.vision-mission {
+  padding: var(--section-padding);
+  background: var(--color-accent);
+}
+
+.vm__inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--grid-gap);
+}
+
+@media (min-width: 768px) {
+  .vm__inner {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.vm__visi,
+.vm__misi {
+  font-size: 1rem;
+  line-height: var(--line-height-base);
+}
+
+.vm__visi p {
+  margin-top: 1rem;
+}
+
+.vm__misi ul {
+  margin-top: 1rem;
+  padding-left: 1.5rem;
+  list-style: disc;
+}
+
+.vm__misi ul li {
+  margin-bottom: 0.5rem;
+  line-height: var(--line-height-base);
+}
+
+/* ==========================================================================
+   7. Section Title Utility
+   ========================================================================== */
+
+.section-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 0.5rem;
+}
+
+/* ==========================================================================
+   8. Products Section
+   ========================================================================== */
+
+.products {
+  padding: var(--section-padding);
+  background: var(--brand-gradient);
+}
+
+.products .section-title {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.products__grid {
+  display: grid;
+  gap: var(--grid-gap);
+  grid-template-columns: repeat(var(--product-cols, 1), 1fr);
+}
+
+@media (min-width: 768px) {
+  .products__grid { --product-cols: 2; }
+}
+
+@media (min-width: 1024px) {
+  .products__grid { --product-cols: 3; }
+}
+
+.product-card {
+  background: var(--color-accent);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card__img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  background: #e0e0e0;
+}
+
+.product-card__body {
+  padding: 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card__name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #1a1a1a;
+}
+
+.product-card__desc {
+  font-size: 0.9rem;
+  line-height: var(--line-height-base);
+  color: #444;
+  flex: 1;
+}
+
+/* ==========================================================================
+   9. Team Section
+   ========================================================================== */
+
+.team {
+  padding: var(--section-padding);
+  background: var(--color-accent);
+}
+
+.team__title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.team__grid {
+  display: grid;
+  gap: var(--grid-gap);
+  grid-template-columns: repeat(var(--team-cols, 1), 1fr);
+}
+
+@media (min-width: 768px) {
+  .team__grid { --team-cols: 2; }
+}
+
+@media (min-width: 1024px) {
+  .team__grid { --team-cols: 3; }
+}
+
+.team-card {
+  background: #fff;
+  border-radius: 0.75rem;
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.team-card__photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin-bottom: 1rem;
+  background: #e0e0e0;
+}
+
+.team-card__name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 0.25rem;
+}
+
+.team-card__role {
+  font-size: 0.9rem;
+  color: var(--color-grad-end);
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   10. Navbar
+   ========================================================================== */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--color-grad-end);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  min-height: 56px;
+}
+
+.navbar__brand {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+}
+
+/* Hamburger button */
+.navbar__hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 44px;
+  height: 44px;
+  padding: 10px 8px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.hamburger-bar {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: #fff;
+  border-radius: 2px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+/* Mobile menu (hidden by default) */
+.navbar__menu {
+  display: none;
+  flex-direction: column;
+  list-style: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: var(--color-grad-end);
+  padding: 0.5rem 0;
+  z-index: 99;
+}
+
+.navbar__menu--open {
+  display: flex;
+}
+
+/* Nav links */
+.nav-link {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  min-height: 44px;
+  min-width: 44px;
+  transition: background 0.15s ease;
+}
+
+.nav-link:hover {
+  background: rgba(255,255,255,0.15);
+}
+
+.nav-link--active {
+  background: rgba(255,255,255,0.25);
+  font-weight: 700;
+  border-left: 3px solid var(--color-grad-start);
+}
+
+/* Desktop layout (≥ 768px) */
+@media (min-width: 768px) {
+  .navbar__hamburger {
+    display: none;
+  }
+
+  .navbar__menu {
+    display: flex !important;
+    flex-direction: row;
+    position: static;
+    width: auto;
+    background: transparent;
+    padding: 0;
+  }
+
+  .nav-link {
+    padding: 0 1rem;
+    min-height: 56px;
+    border-left: none;
+  }
+
+  .nav-link--active {
+    border-left: none;
+    border-bottom: 3px solid var(--color-grad-start);
+    background: rgba(255,255,255,0.1);
+  }
+}
+
+/* Tap targets on mobile */
+@media (max-width: 767px) {
+  .nav-link,
+  .navbar__hamburger {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* ==========================================================================
+   11. Operator Panel
+   ========================================================================== */
+
+.operator-panel {
+  border: none;
+  border-radius: 1rem;
+  padding: 2rem;
+  width: min(520px, 92vw);
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.24);
+  background: #fff;
+}
+
+.operator-panel::backdrop {
+  background: rgba(0,0,0,0.5);
+}
+
+/* Fallback for browsers without native <dialog> */
+.operator-panel[open],
+.operator-panel.dialog-open {
+  display: block;
+}
+
+.op-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: #555;
+  transition: background 0.15s ease;
+}
+
+.op-close:hover {
+  background: #f0f0f0;
+}
+
+.op-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+  color: #1a1a1a;
+  padding-right: 2.5rem;
+}
+
+.op-link-list {
+  list-style: none;
+  margin-bottom: 1rem;
+}
+
+.op-link-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #eee;
+  font-size: 0.9rem;
+}
+
+.op-link-list .op-entry-name {
+  flex: 1;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.op-link-list .op-entry-url {
+  flex: 2;
+  color: #666;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 0.8rem;
+}
+
+.op-entry-edit,
+.op-entry-delete {
+  background: transparent;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+  font-size: 0.8rem;
+  min-width: 44px;
+  min-height: 36px;
+  transition: background 0.15s ease;
+}
+
+.op-entry-edit:hover { background: #e8f5e9; border-color: #00a560; }
+.op-entry-delete:hover { background: #ffeaea; border-color: #d32f2f; color: #d32f2f; }
+
+.op-divider {
+  border: none;
+  border-top: 1px solid #eee;
+  margin: 1rem 0;
+}
+
+.op-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.op-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.op-field label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.op-field input {
+  padding: 0.6rem 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  line-height: 1.4;
+  transition: border-color 0.15s ease;
+}
+
+.op-field input:focus {
+  outline: none;
+  border-color: var(--color-grad-end);
+}
+
+.field-error {
+  font-size: 0.8rem;
+  color: #d32f2f;
+  min-height: 1em;
+  display: block;
+}
+
+.op-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.btn--secondary {
+  background: #f0f0f0;
+  color: #333;
+  border: 1px solid #ccc;
+}
+
+.btn--secondary:hover,
+.btn--secondary:focus {
+  background: #e0e0e0;
+  outline: 2px solid var(--color-grad-end);
+  outline-offset: 2px;
+}
+
+/* ==========================================================================
+   11b. Social Section
+   ========================================================================== */
+
+.social {
+  padding: var(--section-padding);
+  background: var(--brand-gradient);
+}
+
+.social .section-title {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.social__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+/* Social button — shared between the social section and the footer */
+.social-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0.5rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  color: #1a1a1a;
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: background 0.2s ease, opacity 0.2s ease;
+}
+
+.social-btn:hover,
+.social-btn:focus {
+  background: rgba(255, 255, 255, 0.45);
+  outline: 2px solid #1a1a1a;
+  outline-offset: 2px;
+}
+
+.social-btn__icon {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  display: block;
+}
+
+/* ==========================================================================
+   12. Footer
+   ========================================================================== */
+
+.footer {
+  background: var(--color-footer-bg);
+  color: #fff;
+  padding: 2rem 1rem;
+}
+
+.footer__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .footer__inner {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+}
+
+.footer__brand {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.footer__social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer__copy {
+  font-size: 0.875rem;
+  opacity: 0.85;
+}

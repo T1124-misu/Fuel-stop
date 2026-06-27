@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fuel Stop — Jus & Smoothies Segar</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="js/main.js"></script>
+</head>
+<body>
+  <nav id="navbar" class="navbar" aria-label="Main navigation">
+    <a class="navbar__brand" href="#hero">Fuel Stop</a>
+    <button class="navbar__hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span class="hamburger-bar"></span>
+      <span class="hamburger-bar"></span>
+      <span class="hamburger-bar"></span>
+    </button>
+    <ul class="navbar__menu" id="navbar-menu" role="list">
+      <li><a class="nav-link" href="#hero">Home</a></li>
+      <li><a class="nav-link" href="#products">Products</a></li>
+      <li><a class="nav-link" href="#vision-mission">Vision &amp; Mission</a></li>
+      <li><a class="nav-link" href="#team">Team</a></li>
+      <li><a class="nav-link" href="#social">Contact</a></li>
+    </ul>
+  </nav>
+  <main>
+    <section id="hero" class="hero">
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <h1 class="hero__title">Fuel Stop</h1>
+          <p class="hero__tagline">Jus &amp; Smoothies Segar, Praktis, Easy-to-Go</p>
+          <a class="btn btn--primary" href="#products">Lihat Produk</a>
+        </div>
+        <div class="hero__image-wrap">
+          <img class="hero__img stock-photo"
+               src="\assets\icons\logo-fuelstop.png"
+               alt="Fuel Stop hero image"
+               onerror="this.style.background='#F8F6F0';this.removeAttribute('src')">
+        </div>
+      </div>
+    </section>
+    <section id="vision-mission" class="vision-mission">
+      <div class="container vm__inner">
+        <div class="vm__visi">
+          <h2 class="section-title">Visi</h2>
+          <p>Menjadi produk smoothies meal replacement yang sehat, praktis, serta mampu memenuhi kebutuhan masyarakat modern dengan kualitas yang baik dan harga yang terjangkau.</p>
+        </div>
+        <div class="vm__misi">
+          <h2 class="section-title">Misi</h2>
+          <ul>
+            <li>Menghasilkan produk berbahan alami dengan kualitas yang baik</li>
+            <li>Menyediakan produk tanpa tambahan gula pasir</li>
+            <li>Memberikan pilihan konsumsi yang praktis untuk mendukung aktivitas konsumen</li>
+            <li>Menjaga transparansi informasi mengenai kandungan produk</li>
+            <li>Mengembangkan inovasi produk sesuai kebutuhan pasar</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section id="products" class="products">
+      <div class="container">
+        <h2 class="section-title">Produk Kami</h2>
+        <div class="products__grid">
+          <article class="product-card">
+            <img class="product-card__img stock-photo"
+                 src="assets/product-1.jpg"
+                 alt="Green Boost"
+                 loading="lazy"
+                 onerror="this.style.background='#F8F6F0'">
+            <div class="product-card__body">
+              <h3 class="product-card__name">Green Boost</h3>
+              <p class="product-card__desc">Smoothie bayam, apel, dan jahe segar. Kaya antioksidan untuk energi sepanjang hari.</p>
+            </div>
+          </article>
+          <article class="product-card">
+            <img class="product-card__img stock-photo"
+                 src="assets/product-2.jpg"
+                 alt="Tropical Bliss"
+                 loading="lazy"
+                 onerror="this.style.background='#F8F6F0'">
+            <div class="product-card__body">
+              <h3 class="product-card__name">Tropical Bliss</h3>
+              <p class="product-card__desc">Perpaduan mangga, nanas, dan kelapa muda yang menyegarkan. Sempurna untuk hari panas.</p>
+            </div>
+          </article>
+          <article class="product-card">
+            <img class="product-card__img stock-photo"
+                 src="assets/product-3.jpg"
+                 alt="Berry Fusion"
+                 loading="lazy"
+                 onerror="this.style.background='#F8F6F0'">
+            <div class="product-card__body">
+              <h3 class="product-card__name">Berry Fusion</h3>
+              <p class="product-card__desc">Campuran stroberi, bluberi, dan raspberi segar. Tinggi vitamin C untuk imunitas tubuh.</p>
+            </div>
+          </article>
+          <article class="product-card">
+            <img class="product-card__img stock-photo"
+                 src="assets/product-4.jpg"
+                 alt="Citrus Zest"
+                 loading="lazy"
+                 onerror="this.style.background='#F8F6F0'">
+            <div class="product-card__body">
+              <h3 class="product-card__name">Citrus Zest</h3>
+              <p class="product-card__desc">Jus jeruk, lemon, dan jeruk nipis segar. Menyegarkan dengan cita rasa asam manis alami.</p>
+            </div>
+          </article>
+          <article class="product-card">
+            <img class="product-card__img stock-photo"
+                 src="assets/product-5.jpg"
+                 alt="Avocado Dream"
+                 loading="lazy"
+                 onerror="this.style.background='#F8F6F0'">
+            <div class="product-card__body">
+              <h3 class="product-card__name">Avocado Dream</h3>
+              <p class="product-card__desc">Smoothie alpukat, pisang, dan madu murni. Mengenyangkan dan bergizi tinggi untuk meal replacement.</p>
+            </div>
+          </article>
+          <article class="product-card">
+            <img class="product-card__img stock-photo"
+                 src="assets/product-6.jpg"
+                 alt="Watermelon Splash"
+                 loading="lazy"
+                 onerror="this.style.background='#F8F6F0'">
+            <div class="product-card__body">
+              <h3 class="product-card__name">Watermelon Splash</h3>
+              <p class="product-card__desc">Jus semangka segar tanpa tambahan gula. Hidrasi sempurna dengan rasa manis alami buah.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section id="team" class="team">
+      <div class="container">
+        <h2 class="section-title team__title">Tim Kami</h2>
+        <div class="team__grid">
+          <article class="team-card">
+            <img class="team-card__photo stock-photo"
+                 src="assets/team-rafi.jpg"
+                 alt="Muhammad Rafi Kanza"
+                 loading="lazy"
+                 style="min-width:100px;min-height:100px"
+                 onerror="this.style.background='#F8F6F0'">
+            <h3 class="team-card__name">Muhammad Rafi Kanza</h3>
+            <p class="team-card__role">CEO</p>
+          </article>
+          <article class="team-card">
+            <img class="team-card__photo stock-photo"
+                 src="assets/team-iksan.jpg"
+                 alt="Muhammad Iksan Hakiki"
+                 loading="lazy"
+                 style="min-width:100px;min-height:100px"
+                 onerror="this.style.background='#F8F6F0'">
+            <h3 class="team-card__name">Muhammad Iksan Hakiki</h3>
+            <p class="team-card__role">Financial Manager</p>
+          </article>
+          <article class="team-card">
+            <img class="team-card__photo stock-photo"
+                 src="assets/team-windu.jpg"
+                 alt="Mochamad Windu Gamara Akuba"
+                 loading="lazy"
+                 style="min-width:100px;min-height:100px"
+                 onerror="this.style.background='#F8F6F0'">
+            <h3 class="team-card__name">Mochamad Windu Gamara Akuba</h3>
+            <p class="team-card__role">Marketing Manager</p>
+          </article>
+          <article class="team-card">
+            <img class="team-card__photo stock-photo"
+                 src="assets/team-rafif.jpg"
+                 alt="Rafif Aran Kusumo"
+                 loading="lazy"
+                 style="min-width:100px;min-height:100px"
+                 onerror="this.style.background='#F8F6F0'">
+            <h3 class="team-card__name">Rafif Aran Kusumo</h3>
+            <p class="team-card__role">Production Manager</p>
+          </article>
+          <article class="team-card">
+            <img class="team-card__photo stock-photo"
+                 src="assets/team-yanti.jpg"
+                 alt="Yanti Dewi Lestari"
+                 loading="lazy"
+                 style="min-width:100px;min-height:100px"
+                 onerror="this.style.background='#F8F6F0'">
+            <h3 class="team-card__name">Yanti Dewi Lestari</h3>
+            <p class="team-card__role">Customer Service</p>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section id="social" class="social">
+      <div class="container">
+        <h2 class="section-title">Ikuti Kami</h2>
+        <div class="social__buttons" id="social-buttons" role="list">
+          <!-- Populated by renderSocialButtons() from localStorage -->
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer id="footer" class="footer">
+    <div class="container footer__inner">
+      <p class="footer__brand">Fuel Stop</p>
+      <div class="footer__social" id="footer-social-buttons" role="list"></div>
+      <p class="footer__copy">&copy; <span id="footer-year"></span> Fuel Stop. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <dialog id="operator-panel" class="operator-panel" aria-labelledby="op-title">
+    <button id="op-close" class="op-close" aria-label="Tutup panel">&#x2715;</button>
+    <h2 id="op-title" class="op-title">Kelola Tautan Media Sosial</h2>
+    <ul id="op-link-list" class="op-link-list"></ul>
+    <hr class="op-divider">
+    <form id="op-form" class="op-form" novalidate>
+      <div class="op-field">
+        <label for="op-name">Nama Platform</label>
+        <input id="op-name" type="text" placeholder="contoh: Instagram" maxlength="100" autocomplete="off">
+        <span id="op-name-error" class="field-error" aria-live="polite"></span>
+      </div>
+      <div class="op-field">
+        <label for="op-url">URL</label>
+        <input id="op-url" type="url" placeholder="https://…" maxlength="2048" autocomplete="off">
+        <span id="op-url-error" class="field-error" aria-live="polite"></span>
+      </div>
+      <div class="op-field">
+        <label for="op-icon">Nama Ikon (opsional)</label>
+        <input id="op-icon" type="text" placeholder="contoh: instagram (tanpa ekstensi)" autocomplete="off">
+      </div>
+      <input id="op-index" type="hidden" value="-1">
+      <div class="op-actions">
+        <button type="submit" class="btn btn--primary">Simpan</button>
+        <button type="button" id="op-cancel" class="btn btn--secondary">Batal</button>
+      </div>
+    </form>
+  </dialog>
+</body>
+</html>
